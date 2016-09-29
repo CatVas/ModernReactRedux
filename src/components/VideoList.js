@@ -5,7 +5,13 @@ import VideoListItem from './VideoListItem';
 
 const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
-    return <VideoListItem key={video.etag} video={video} />;
+    return (
+      <VideoListItem
+        key={video.etag}
+        onVideoSelect={props.onVideoSelect}
+        video={video}
+      />
+    );
   });
 
   return (
